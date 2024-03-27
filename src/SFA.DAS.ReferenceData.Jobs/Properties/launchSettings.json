@@ -2,7 +2,7 @@
   "profiles": {
     "SFA.DAS.ReferenceData.Jobs": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7298",
+      "commandLineArgs": "--port 7261",
       "launchBrowser": false
     }
   }
