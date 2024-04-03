@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.ReferenceData.Jobs", "SFA.DAS.ReferenceData.Jobs\SFA.DAS.ReferenceData.Jobs.csproj", "{F7A807A9-9520-4207-83A1-5CC3E19CFE8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.ReferenceData.Jobs", "SFA.DAS.ReferenceData.Jobs\SFA.DAS.ReferenceData.Jobs.csproj", "{F7A807A9-9520-4207-83A1-5CC3E19CFE8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{269490F9-EF27-4048-9048-AECE8A4AFE69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.ReferenceData.Jobs.Tests", "SFA.DAS.ReferenceData.Jobs.Tests\SFA.DAS.ReferenceData.Jobs.Tests.csproj", "{C4524635-C955-44A3-AE97-8CCADAB41DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{F7A807A9-9520-4207-83A1-5CC3E19CFE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7A807A9-9520-4207-83A1-5CC3E19CFE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A807A9-9520-4207-83A1-5CC3E19CFE8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4524635-C955-44A3-AE97-8CCADAB41DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4524635-C955-44A3-AE97-8CCADAB41DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4524635-C955-44A3-AE97-8CCADAB41DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4524635-C955-44A3-AE97-8CCADAB41DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4524635-C955-44A3-AE97-8CCADAB41DF7} = {269490F9-EF27-4048-9048-AECE8A4AFE69}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C35EEB6D-6478-40DF-8DCB-A79495456936}
