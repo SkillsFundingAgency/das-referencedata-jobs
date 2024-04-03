@@ -16,11 +16,10 @@ public class StartPublicSectorOrganisationsImport
     }
 
     [Function("StartPublicSectorOrganisationsImport")]
-    public async Task Run([TimerTrigger("%PublicSectorOrganisationsImportSchedule%")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("%ImportSchedule%")] TimerInfo myTimer)
     {
         try
         {
-
             _logger.LogInformation("DataLoad function started at: {0}", DateTime.Now);
             await _client.StartDataLoad();
             _logger.LogInformation("DataLoad function completed at: {0}", DateTime.Now);
