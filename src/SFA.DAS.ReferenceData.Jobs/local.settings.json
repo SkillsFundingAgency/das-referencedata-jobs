@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "EnvironmentName": "LOCAL",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "ConfigurationStorageConnectionString": "UseDevelopmentStorage=true",
+    "ConfigNames": "SFA.DAS.ReferernceData.Jobs",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "ImportSchedule": "1 5 * * * *"
+  },
+  "ReferenceDataApim:ApiBaseUrl": "http://test.com",
+  "ReferenceDataApim:SubscriptionKey": "",
+  "ReferenceDataApim:ApiVersion": "1.0"
+}
