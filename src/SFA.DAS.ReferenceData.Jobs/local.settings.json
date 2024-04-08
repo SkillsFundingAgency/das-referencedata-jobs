@@ -10,5 +10,5 @@
   },
   "ReferenceDataApim:ApiBaseUrl": "http://test.com",
   "ReferenceDataApim:SubscriptionKey": "",
-  "ReferenceDataApim:ApiVersion": "1.0"
+  "ReferenceDataApim:ApiVersion": "1.0" 
 }
