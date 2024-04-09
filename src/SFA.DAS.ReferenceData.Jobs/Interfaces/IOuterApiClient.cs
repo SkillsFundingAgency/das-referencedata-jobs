@@ -1,6 +1,6 @@
 ﻿namespace SFA.DAS.ReferenceData.Jobs.Interfaces
 {
-    public interface IApimClient
+    public interface IOuterApiClient
     {
         Task StartDataLoad();
     }

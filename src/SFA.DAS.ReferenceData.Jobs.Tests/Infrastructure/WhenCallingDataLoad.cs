@@ -19,7 +19,7 @@ public class WhenCallingDataLoad
 {
     [Test, MoqAutoData]
     public async Task Then_Calls_Api_endpoint_correctly(
-        [Frozen] Mock<ILogger<ApimClient>> mockLogger)
+        [Frozen] Mock<ILogger<OuterApiClient>> mockLogger)
     {
         var config = new ReferenceDataApimConfiguration
         {
@@ -33,7 +33,7 @@ public class WhenCallingDataLoad
         var httpMessageHandler = MessageHandlerHelper.SetupMessageHandlerMock(new HttpResponseMessage { StatusCode = HttpStatusCode.Accepted }, "POST");
         var httpClient = new HttpClient(httpMessageHandler.Object);
 
-        var sut = new ApimClient(httpClient, options, mockLogger.Object);
+        var sut = new OuterApiClient(httpClient, options, mockLogger.Object);
 
         await sut.StartDataLoad();
 

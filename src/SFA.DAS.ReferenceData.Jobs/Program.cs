@@ -27,7 +27,7 @@ var host = new HostBuilder()
         services.AddOptions();
         services.Configure<ReferenceDataApimConfiguration>(config.GetSection(ReferenceDataApimConfiguration.ReferenceDataApim));
         services.AddSingleton(cfg => cfg.GetService<IOptions<ReferenceDataApimConfiguration>>().Value);
-        services.AddHttpClient<IApimClient, ApimClient>();
+        services.AddHttpClient<IOuterApiClient, OuterApiClient>();
     })
     .Build();
 

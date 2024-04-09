@@ -4,13 +4,13 @@ using SFA.DAS.ReferenceData.Jobs.Interfaces;
 
 namespace SFA.DAS.ReferenceData.Jobs.Infrastructure;
 
-public class ApimClient : IApimClient
+public class OuterApiClient : IOuterApiClient
 {
     private readonly HttpClient _httpClient;
-    private readonly ILogger<ApimClient> _logger;
+    private readonly ILogger<OuterApiClient> _logger;
     private readonly ReferenceDataApimConfiguration _configuration;
 
-    public ApimClient(HttpClient httpClient, IOptions<ReferenceDataApimConfiguration> configuration, ILogger<ApimClient> logger)
+    public OuterApiClient(HttpClient httpClient, IOptions<ReferenceDataApimConfiguration> configuration, ILogger<OuterApiClient> logger)
     {
         _configuration = configuration.Value;
         httpClient.BaseAddress = new Uri(_configuration.ApiBaseUrl);

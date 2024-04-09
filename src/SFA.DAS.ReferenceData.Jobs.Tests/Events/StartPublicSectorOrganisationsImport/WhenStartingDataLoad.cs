@@ -12,7 +12,7 @@ public class WhenStartingDataLoad
 {
     [Test, MoqAutoData]
     public async Task Then_Successfully_Call_Client(
-        [Frozen] Mock<IApimClient> mockApiClient,
+        [Frozen] Mock<IOuterApiClient> mockApiClient,
         [Frozen] Mock<ILogger<Jobs.Events.StartPublicSectorOrganisationsImport>> mockLogger,
         [Greedy] Jobs.Events.StartPublicSectorOrganisationsImport job)
     {

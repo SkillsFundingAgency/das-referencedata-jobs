@@ -6,10 +6,10 @@ namespace SFA.DAS.ReferenceData.Jobs.Events;
 
 public class StartPublicSectorOrganisationsImport
 {
-    private readonly IApimClient _client;
+    private readonly IOuterApiClient _client;
     private readonly ILogger<StartPublicSectorOrganisationsImport> _logger;
 
-    public StartPublicSectorOrganisationsImport(ILogger<StartPublicSectorOrganisationsImport> logger, IApimClient client)
+    public StartPublicSectorOrganisationsImport(ILogger<StartPublicSectorOrganisationsImport> logger, IOuterApiClient client)
     {
         _client = client;
         _logger = logger;
