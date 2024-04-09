@@ -82,7 +82,8 @@
         "resourceGroupName": "[concat(variables('resourceNamePrefix'), '-rg')]",
         "functionAppName": "[concat(variables('resourceNamePrefix'), '-fa')]",
         "appServicePlanName": "[concat(variables('resourceNamePrefix'), '-asp')]",
-        "configNames": "SFA.DAS.ReferenceData.Jobs"
+        "configNames": "SFA.DAS.ReferenceData.Jobs",
+        "importSchedule" :  "*/5 * * * *"
     },
     "resources": [
         {
@@ -272,11 +273,15 @@
                                 },
                                 {
                                     "name": "FUNCTIONS_WORKER_RUNTIME",
-                                    "value": "dotnet"
+                                    "value": "dotnet-isolated"
                                 },
                                 {
                                     "name": "WEBSITE_RUN_FROM_PACKAGE",
                                     "value": "1"
+                                },
+                                {
+                                    "name": "ImportSchedule",
+                                    "value": "[variables('importSchedule')]"
                                 }
                             ]
                         }
