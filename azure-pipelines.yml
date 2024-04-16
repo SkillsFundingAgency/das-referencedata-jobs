@@ -103,7 +103,7 @@ stages:
 #   variables:
 #   - group: PROD Management Resources
 #   - group: PROD Shared Resources
-#   - group: __PRODSpecificReleaseVariables__ #PLACEHOLDER
+#   - group: PROD das-referencedata-jobs
 #   jobs:
 #   - template: pipeline-templates/job/deploy.yml
 #     parameters:
