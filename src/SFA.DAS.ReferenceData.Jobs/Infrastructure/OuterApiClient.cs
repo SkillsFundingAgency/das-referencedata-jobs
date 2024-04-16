@@ -20,7 +20,7 @@ public class OuterApiClient : IOuterApiClient
 
     public async Task StartDataLoad()
     {
-        var requestMessage = new HttpRequestMessage(HttpMethod.Post, "/dataload");
+        var requestMessage = new HttpRequestMessage(HttpMethod.Post, "dataload");
         AddAuthenticationHeader(requestMessage);
 
         _logger.LogInformation("Making call to start data load"); 
