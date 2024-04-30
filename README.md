@@ -14,7 +14,7 @@ This is part of the Reference Data project, and is solely used to start the impo
 
 ## How It Works
 
-A NServiceBus timer periodically starts the import process, this import process calls the outer API which in turn fetches the external data and populates it in the appropriate databases. 
+An Azure timer periodically starts the import process, this import process calls the outer API which in turn fetches the external data and populates it in the appropriate databases. 
 
 _For Example_
 ```
@@ -83,10 +83,9 @@ _List the key technologies in-use in the project. This will give an indication a
 
 _For Example_
 ```
-* .Net 6.0
+* .Net 8.0
 * Azure Functions V4
 * Azure Table Storage
-* NServiceBus
 * NUnit
 * Moq
 * FluentAssertions
