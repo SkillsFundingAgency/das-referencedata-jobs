@@ -4,18 +4,18 @@ using SFA.DAS.ReferenceData.Jobs.Interfaces;
 
 namespace SFA.DAS.ReferenceData.Jobs.Events;
 
-public class StartPublicSectorOrganisationsImport
+public class StartReferenceDataImports
 {
     private readonly IOuterApiClient _client;
-    private readonly ILogger<StartPublicSectorOrganisationsImport> _logger;
+    private readonly ILogger<StartReferenceDataImports> _logger;
 
-    public StartPublicSectorOrganisationsImport(ILogger<StartPublicSectorOrganisationsImport> logger, IOuterApiClient client)
+    public StartReferenceDataImports(ILogger<StartReferenceDataImports> logger, IOuterApiClient client)
     {
         _client = client;
         _logger = logger;
     }
 
-    [Function("StartPublicSectorOrganisationsImport")]
+    [Function("StartReferenceDataImports")]
     public async Task Run([TimerTrigger("%ImportSchedule%")] TimerInfo myTimer)
     {
         try

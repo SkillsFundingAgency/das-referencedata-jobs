@@ -13,8 +13,8 @@ public class WhenStartingDataLoad
     [Test, MoqAutoData]
     public async Task Then_Successfully_Call_Client(
         [Frozen] Mock<IOuterApiClient> mockApiClient,
-        [Frozen] Mock<ILogger<Jobs.Events.StartPublicSectorOrganisationsImport>> mockLogger,
-        [Greedy] Jobs.Events.StartPublicSectorOrganisationsImport job)
+        [Frozen] Mock<ILogger<Jobs.Events.StartReferenceDataImports>> mockLogger,
+        [Greedy] Jobs.Events.StartReferenceDataImports job)
     {
         await job.Run(new TimerInfo());
 
