@@ -74,6 +74,9 @@
         "utcValue": {
             "type": "string",
             "defaultValue": "[utcNow()]"
+        },
+        "importSchedule": {
+            "type": "string"
         }
     },
     "variables": {
@@ -82,8 +85,7 @@
         "resourceGroupName": "[concat(variables('resourceNamePrefix'), '-rg')]",
         "functionAppName": "[concat(variables('resourceNamePrefix'), '-fa')]",
         "appServicePlanName": "[concat(variables('resourceNamePrefix'), '-asp')]",
-        "configNames": "SFA.DAS.ReferenceData.Jobs",
-        "importSchedule" :  "*/5 * * * *"
+        "configNames": "SFA.DAS.ReferenceData.Jobs"
     },
     "resources": [
         {
@@ -281,7 +283,7 @@
                                 },
                                 {
                                     "name": "ImportSchedule",
-                                    "value": "[variables('importSchedule')]"
+                                    "value": "[parameters('importSchedule')]"
                                 }
                             ]
                         }
