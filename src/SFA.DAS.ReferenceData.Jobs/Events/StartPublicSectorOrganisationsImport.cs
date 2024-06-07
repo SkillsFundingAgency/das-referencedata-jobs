@@ -16,7 +16,7 @@ public class StartReferenceDataImports
     }
 
     [Function("StartReferenceDataImports")]
-    public async Task Run([TimerTrigger("%ImportSchedule%")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("%ImportSchedule%", RunOnStartup = true)] TimerInfo myTimer)
     {
         try
         {
