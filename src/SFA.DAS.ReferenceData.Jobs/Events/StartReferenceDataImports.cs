@@ -1,6 +1,7 @@
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using SFA.DAS.ReferenceData.Jobs.Interfaces;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SFA.DAS.ReferenceData.Jobs.Events;
 
@@ -23,6 +24,10 @@ public class StartReferenceDataImports
             _logger.LogInformation("DataLoad function started at: {0}", DateTime.Now);
             await _client.StartDataLoad();
             _logger.LogInformation("DataLoad function completed at: {0}", DateTime.Now);
+        }
+        catch (TimeoutException)
+        {
+            _logger.LogInformation("DataLoad function Timed out at: {0}", DateTime.Now);
         }
         catch (Exception ex)
         {

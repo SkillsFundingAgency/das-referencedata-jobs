@@ -1,14 +1,11 @@
 ﻿using AutoFixture.NUnit3;
-using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using SFA.DAS.ReferenceData.Jobs.Infrastructure;
-using SFA.DAS.ReferenceData.Jobs.Interfaces;
 using SFA.DAS.Testing.AutoFixture;
 using System.Net;
 using FluentAssertions;
-using Google.Protobuf.WellKnownTypes;
 using Microsoft.Extensions.Options;
 using Moq.Protected;
 using SFA.DAS.ReferenceData.Jobs.Tests.Helpers;
@@ -47,4 +44,28 @@ public class WhenCallingDataLoad
                 ItExpr.IsAny<CancellationToken>()
             );
     }
+
+    [Test, MoqAutoData]
+    public async Task Then_Calls_Api_endpoint_TimesOut(
+        [Frozen] Mock<ILogger<OuterApiClient>> mockLogger)
+    {
+        var config = new ReferenceDataApimConfiguration
+        {
+            ApiBaseUrl = "http://test.com",
+            ApiVersion = "1.0",
+            SubscriptionKey = "SubKey"
+        };
+
+        var options = Options.Create(config);
+
+        var httpMessageHandler = MessageHandlerHelper.SetupMessageHandlerMock(new HttpResponseMessage { StatusCode = HttpStatusCode.GatewayTimeout }, "POST");
+        var httpClient = new HttpClient(httpMessageHandler.Object);
+
+        var sut = new OuterApiClient(httpClient, options, mockLogger.Object);
+
+        var act = () => sut.StartDataLoad();
+
+        act.Should().ThrowAsync<TimeoutException>().WithMessage("XXX");
+    }
+
 }
