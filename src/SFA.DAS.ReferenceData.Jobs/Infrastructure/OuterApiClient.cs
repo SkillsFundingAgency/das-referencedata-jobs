@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Net;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SFA.DAS.ReferenceData.Jobs.Interfaces;
 
@@ -25,6 +26,11 @@ public class OuterApiClient : IOuterApiClient
 
         _logger.LogInformation("Making call to start data load"); 
         var response = await _httpClient.SendAsync(requestMessage);
+
+        if (response.StatusCode == HttpStatusCode.GatewayTimeout)
+        {
+            throw new TimeoutException("Call to APIM 'dataload' has timed out");
+        }
 
         if (!response.IsSuccessStatusCode)
         {
